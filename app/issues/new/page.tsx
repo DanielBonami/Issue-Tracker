@@ -118,9 +118,17 @@ const NewIssuePage: React.FC = () => {
         </div>
       </form>
 
-      {/* Display success or error message */}
-      {successMessage && <p className="text-green-500 mt-4">{successMessage}</p>}
-      {errorMessage && <p className="text-red-500 mt-4">{errorMessage}</p>}
+      {/* Display success or error message in callout boxes */}
+      {successMessage && (
+        <div className="mt-4 p-4 border border-green-500 bg-green-100 text-green-700 rounded-md">
+          <strong>Success: </strong>{successMessage}
+        </div>
+      )}
+      {errorMessage && (
+        <div className="mt-4 p-4 border border-red-500 bg-red-100 text-red-700 rounded-md">
+          <strong>Error: </strong>{errorMessage}
+        </div>
+      )}
 
       {/* Optionally display the current value of the input */}
       {description && <p className="text-sm text-gray-600 mt-4">Current Description: {description}</p>}
@@ -129,6 +137,7 @@ const NewIssuePage: React.FC = () => {
 };
 
 export default NewIssuePage;
+
 
 
 
