@@ -1,23 +1,119 @@
+@import 'animate.css';
+/* Add these at the top of your globals.css file */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Custom Root Variables for Colors */
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: 255, 255, 255; /* Light text for dark mode */
+  --background-start-rgb: 0, 0, 0; /* Solid black background */
+  --background-end-rgb: 30, 30, 30; /* Slightly lighter black background */
+  --primary-color: #9B68B7; /* Lighter purple for accent */
+  --secondary-color: #F0E5D8; /* Soft beige for secondary text */
+  --border-color: rgba(255, 255, 255, 0.1); /* Light borders */
+  --card-bg: #1a1a1a; /* Darker background for cards */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground-rgb: 238, 238, 238; /* Light text for dark mode */
+    --background-start-rgb: 0, 0, 0; /* Black background */
+    --background-end-rgb: 30, 30, 30; /* Dark background end */
+    --primary-color: #9B68B7; /* Purple accent color */
+    --secondary-color: #E3D9C6; /* Soft beige for text */
+    --border-color: rgba(255, 255, 255, 0.2); /* Light borders for dark mode */
+    --card-bg: #2b2b2b; /* Darker card background */
   }
 }
 
+/* Body Styling */
 body {
-  background: var(--background);
+  background: linear-gradient(to right, rgb(var(--background-start-rgb)), rgb(var(--background-end-rgb)));
   color: rgb(var(--foreground-rgb));
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', sans-serif; /* Modern font */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh; /* Ensure full screen height */
+  margin: 0;
+  padding: 0;
+  background-color: black; /* Ensure body padding area is black */
+}
+
+/* Styling for text */
+h1, h2, h3, h4 {
+  font-family: 'Poppins', sans-serif; /* Clean and modern headings */
+  font-weight: 700;
+  color: rgb(var(--foreground-rgb)); /* Light text */
+}
+
+/* Links */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--secondary-color); /* On hover, change link color */
+}
+
+/* Card Styling */
+.card {
+  background: var(--card-bg);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-color);
+  padding: 20px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+
+/* Ensure the card has black padding */
+.card {
+  background: var(--card-bg);
+  padding: 20px;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Buttons */
+button, .btn {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover, .btn:hover {
+  background-color: var(--secondary-color);
+  transform: scale(1.05);
+}
+
+/* Responsive Design Enhancements */
+@media (max-width: 768px) {
+  body {
+    padding: 20px;
+  }
+
+  .card {
+    padding: 15px;
+  }
+
+  button, .btn {
+    width: 100%;
+    padding: 12px 15px;
+  }
 }

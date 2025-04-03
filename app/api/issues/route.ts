@@ -1,6 +1,7 @@
 // app/api/issues/route.ts
 import { NextResponse } from 'next/server';
 
+
 export async function POST(req: Request) {
   try {
     // Get data from the request body
