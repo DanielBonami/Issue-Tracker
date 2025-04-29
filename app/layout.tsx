@@ -22,22 +22,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="h-full">
-      <body className={`${inter.variable} bg-black min-h-screen m-0`}>
+    <html lang="en" className="h-full w-full">
+      <body className={`${inter.variable} bg-black text-white m-0 p-0 h-full w-full`}>
         <Theme appearance="light" accentColor="violet">
           <Navbar />
 
-          {/* Main Section with Black Background and Padding */}
-          <main className="flex flex-col items-center justify-center p-6 md:p-12 space-y-10 text-white w-full min-h-screen bg-black">
+          {/* Main Section */}
+          <main className="flex-grow flex flex-col items-center justify-center w-full min-h-screen">
             {/* Main Content */}
-            <div className="max-w-7xl w-full px-4 sm:px-6 md:px-8 bg-black">
+            <div className="w-full">
               {children}
             </div>
           </main>
 
-          {/* Footer Section with Black Background and Padding */}
-          <footer className="bg-black text-white py-6 text-center mt-0">
-            <div className="bg-black p-6">
+          {/* Footer Section */}
+          <footer className="bg-black text-white py-6 text-center w-full">
+            <div className="p-4">
               <p className="text-sm">
                 &copy; {new Date().getFullYear()} Issue Tracker App. All Rights Reserved.
               </p>

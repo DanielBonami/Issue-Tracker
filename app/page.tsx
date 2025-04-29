@@ -1,42 +1,49 @@
-import React from 'react';
+import React from "react";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-r from-black to-black flex flex-col items-center justify-center text-white relative overflow-hidden">
-      {/* Optional: Add a subtle background image */}
-      <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{ backgroundImage: 'url("https://source.unsplash.com/1600x900/?technology")' }}></div>
+    <div className="min-h-screen bg-black text-white flex items-center justify-center relative overflow-hidden px-4 sm:px-6 lg:px-8">
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center opacity-20"
+        style={{
+          backgroundImage:
+            'url("https://source.unsplash.com/1600x900/?technology")',
+        }}
+      ></div>
 
-      {/* Main Content */}
-      <div className="relative z-10 flex-grow flex flex-col items-center justify-center px-6 py-12 sm:py-16 lg:py-20 text-center animate__animated animate__fadeIn animate__delay-1s">
-        <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold mb-6 sm:mb-8 lg:mb-10 tracking-tight leading-tight animate__animated animate__fadeIn animate__delay-1s animate__slideInUp">
+      {/* Foreground Content */}
+      <main className="relative z-10 flex flex-col items-center text-center max-w-screen-lg w-full space-y-6 sm:space-y-10">
+        {/* Title */}
+        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight">
           Issue Tracker
         </h1>
-        <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-8 sm:mb-10 md:mb-12 lg:mb-14 max-w-3xl mx-auto animate__animated animate__fadeIn animate__delay-2s">
+
+        {/* Subtitle */}
+        <p className="text-sm sm:text-lg md:text-xl lg:text-2xl max-w-3xl leading-relaxed">
           Your journey to amazing experiences starts here. Track your issues and progress with ease.
         </p>
 
-        {/* Main Content Area */}
-        <div className="bg-gray-800 text-gray-200 p-8 rounded-lg shadow-2xl max-w-lg w-full mx-4 lg:max-w-2xl animate__animated animate__fadeIn animate__delay-3s">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-4 text-center">
+        {/* Info Box */}
+        <section className="bg-gray-800 text-gray-200 p-6 sm:p-8 rounded-xl shadow-lg w-full max-w-sm sm:max-w-md md:max-w-lg">
+          <h2 className="text-lg sm:text-xl md:text-2xl font-semibold mb-3">
             Welcome to Issue Tracker
           </h2>
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed text-center mb-6">
-            Issue Tracker is a powerful software application that helps teams manage and track issues, bugs, feature requests, 
-            and other tasks. It provides a centralized platform for reporting, prioritizing, assigning, and resolving problems 
-            efficiently and effectively.
+          <p className="text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed mb-4">
+            Issue Tracker is a powerful tool that helps teams manage and track issues, bugs, and feature requests efficiently.
           </p>
-          <div className="mt-6 text-center">
-            <a 
-              href="/issues" // Changed the href to "/issues"
-              className="inline-block bg-purple-700 text-gray-200 py-3 px-6 rounded-full text-lg font-medium hover:bg-purple-800 transition-all transform hover:scale-105 hover:rotate-3 hover:translate-y-1 active:scale-95"
+
+          {/* CTA Button */}
+          <div>
+            <a
+              href="/issues"
+              className="inline-block bg-purple-700 hover:bg-purple-800 text-white py-2 px-6 rounded-full text-sm sm:text-base font-medium transition-all transform hover:scale-105 active:scale-95"
             >
               Get Started
             </a>
           </div>
-        </div>
-      </div>
-
-      {/* No footer, since you mentioned you already have one elsewhere */}
+        </section>
+      </main>
     </div>
   );
 }
